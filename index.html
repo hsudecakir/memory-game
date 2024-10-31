@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/3ed2e8cef0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/memory-game.js" defer></script>
+  <title>memory</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>memory</h1>
+      <div class="header-buttons">
+        <button id="restartBtn">Restart</button>
+        <button id="newGameBtn">New Game</button>
+      </div>
+      <button id="menuBtn">Menu</button>
+      <dialog id="hamburgerMenu">
+        <div class="hamburger-menu-buttons">
+          <button id="hamburgerMenuRestartBtn">Restart</button>
+          <button id="hamburgerMenuNewGameBtn">New Game</button>
+          <button id="hamburgerMenuResumeBtn">Resume Game</button>
+        </div>
+      </dialog>
+    </div>
+    <div class="boxes">
+    </div>
+    <div class="footer">
+      <div class="timer">
+        <p>Time</p>
+        <p id="timeCounterTxt">0:00</p>
+      </div>
+      <div class="moves">
+        <p>Moves</p>
+        <p id="movesCounterTxt">0</p>
+      </div>
+    </div>
+  </div>
+  <dialog id="dialog">
+    <div class="dialog-container">
+      <h2>You did it!</h2>
+    <p>Game over! Here’s how you got on…</p>
+    <div class="score-board">
+      <p class="score-board-text">Time Elapsed</p>
+      <p class="score-board-counter"></p>
+    </div>
+    <div class="score-board">
+      <p class="score-board-text">Moves Taken</p>
+      <p class="score-board-counter"></p>
+    </div>
+    <div class="dialog-buttons">
+      <button id="dialogRestartBtn">Restart</button>
+      <button id="dialogNewGameBtn">Setup New Game</button>
+    </div>
+    </div>
+  </dialog>
+</body>
+</html>

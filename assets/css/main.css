@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+  --text-color: #152938;
+  --white: #FCFCFC;
+  --orange: #FDA214;
+  --dark-green: #304859;
+  --gray: #BCCED9;
+  --time-text: #7191A5;
+  --time-counter: #304859;
+  --bg-gray: #DFE7EC;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  background-color: var(--white);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+  box-sizing: border-box;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+.container{
+  padding: 24px;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.header h1{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.76px;
+  color: var(--text-color);
+}
+
+.header-buttons{
+  display: none;
+}
+
+#menuBtn{
+  padding: 10px 18.5px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.84px;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--orange);
+  border-radius: 26px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.boxes{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12.29px;
+  margin: 0 auto;
+  margin-bottom: 102px;
+  width: 327px;
+}
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72.53px;
+  height: 72.53px;
+  border-radius: 50%;
+  color: transparent;
+  background-color: var(--dark-green);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 49.6px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.box.active{
+  background-color: var(--gray);
+  color: var(--white);
+  pointer-events: none;
+}
+
+.box.matched{
+  background-color: var(--orange);
+  color: var(--white);
+  pointer-events: none;
+}
+
+.box.notclicked{
+  pointer-events: none;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.timer, .moves{
+  width: 100%;
+  background-color: var(--bg-gray);
+  border-radius: 5px;
+  padding-block: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer p, .moves p{
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18.6px;
+  text-align: center;
+  color: var(--time-text);
+  margin-bottom: 2px;
+}
+
+#timeCounterTxt, #movesCounterTxt{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.76px;
+  text-align: center;
+  color: var(--time-counter);
+}
+
+.dialog-container{
+  padding: 32px 24px 24px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 87%;
+}
+
+.dialog-container h2{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.76px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.dialog-container p{
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.36px;
+  text-align: center;
+  color: var(--time-text);
+}
+
+.score-board{
+  width: 100%;
+  background-color: var(--bg-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.score-board .score-board-text{
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16.12px;
+  text-align: left;
+}
+
+.score-board .score-board-counter{
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.8px;
+  text-align: right;
+  color: var(--time-counter);
+}
+
+.dialog-buttons{
+  width: 100%;
+}
+
+.dialog-buttons button{
+  width: 100%;
+  padding: 12px 0 14px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.32px;
+  text-align: center;
+  border-radius: 26px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.dialog-container #RestartBtn{
+  background-color: var(--orange);
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.dialog-container #NewGameBtn{
+  background-color: var(--bg-gray);
+  color: var(--time-counter);
+}
+
+::backdrop{
+  background-color: #000000;
+  opacity: 0.5;
+}
+
+#hamburgerMenu{
+  width: 87%;
+  background-color: var(--white);
+  padding: 24px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.hamburger-menu-buttons{
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hamburger-menu-buttons button{
+  width: 100%;
+  border-radius: 26px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.32px;
+  text-align: center;
+  padding: 12px 0 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--time-counter);
+  background-color: var(--bg-gray);
+}
+
+#hamburgerMenuRestartBtn{
+  color: var(--white);
+  background-color: var(--orange);
+}
+
+@media only screen and (min-width: 768px){
+  .container{
+    padding: 37px 40px 48px 39px;
+  }
+  .header{
+    margin-bottom: 157px;
+  }
+  .header h1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49.6px;
+  }
+  .header-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  #restartBtn{
+    color: var(--white);
+    background-color: var(--orange);
+    padding: 14px 29px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.8px;
+    text-align: center;
+    border-radius: 26px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  #newGameBtn{
+    color: var(--dark-green);
+    background-color: var(--bg-gray);
+    padding: 14px 24px;
+    border-radius: 26px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.8px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  #menuBtn{
+    display: none;
+  }
+  .boxes{
+    gap: 20px;
+    width: 532px;
+    margin: 0 auto;
+    margin-bottom: 126px;
+  }
+  .box{
+    width: 118px;
+    height: 118px;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 69.44px;
+  }
+  
+  .box.active{
+    background-color: var(--gray);
+    color: var(--white);
+  }
+  
+  .box.matched{
+    background-color: var(--orange);
+    color: var(--white);
+  }
+  
+  .footer{
+    width: 540px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+  
+  .timer, .moves{
+    border-radius: 10px;
+    padding: 16px 24px 16px 21px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .timer p, .moves p{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.32px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  
+  #timeCounterTxt, #movesCounterTxt{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39.68px;
+    text-align: right;
+  }
+
+  .dialog-container{
+    padding: 51px 56px 69px;
+    gap: 16px;
+    border-radius: 20px;
+    width: 85%;
+  }
+  
+  .dialog-container h2{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 59.52px;
+  }
+  
+  .dialog-container p{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.32px;
+    margin-bottom: 24px;
+  }
+  
+  .score-board{
+    padding: 17px 32px 15px;
+    border-radius: 10px;
+  }
+  
+  .score-board .score-board-text{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.32px;
+    margin-bottom: 0;
+  }
+  
+  .score-board .score-board-counter{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39.68px;
+    margin-bottom: 0;
+  }
+  
+  .dialog-buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  
+  .dialog-buttons button{
+    width: 100%;
+    padding: 13px 0 14px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.8px;
+  }
+
+  .dialog-container #RestartBtn{
+    margin-bottom: 0;
+  }
+}
+
+
+@media only screen and (min-width: 1110px){
+  .container{
+    max-width: 1110px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 67px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header{
+    /* margin-bottom: 106px; */
+    margin-bottom: 0;
+  }
+  .boxes{
+    margin-bottom: 0;
+  }
+  .timer, .moves{
+    border-radius: 10px;
+    padding: 16px 24px 16px 21px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .dialog-container{
+    width: 654px;
+  }
+}
