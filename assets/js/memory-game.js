@@ -1,17 +1,3 @@
-// Emojiler dizisi oluştur.
-// Emojiler dizisini karıştır.
-// Emojiler dizisini ekrana bastır.
-// Emojiler başlangıçta görünmez yap.
-// Her bir emojiye click eventi ata.
-// Tıklanan emojiye active class'ı ata ve görünür yap.
-// Tıklanan emojinin tıklanabilirliğini kapat.
-// Tıklanan iki emojiyi birbiriyle karşılaştır. (Bir diziye push'la ve oradan kontrol et.)
-// Eşleşmişler ise score'u arttır ve matched class'a ekleyip tıklanabilirliğini ve görünürlüğünü kaldır. Eğer eşleşmezlerse active class'ı geri kaldır. (Burada eğer iki eleman eşleşmemişse direkt kapanacağı için bir setTimeout fonksiyonu ile kapanma süresini geciktir.)
-// Score durumu 0 olduğunda oyunu bitir.
-// Eklenmesi gereken diğer içerikler:
-
-// Her bir emojiye tıklandığında hareket sayısını arttır (Moves).
-
 const icons = ['<i class="fa-regular fa-futbol"></i>', '<i class="fa-solid fa-anchor"></i>', '<i class="fa-solid fa-flask"></i>', '<i class="fa-solid fa-sun"></i>', '<i class="fa-solid fa-bug"></i>', '<i class="fa-regular fa-moon"></i>', '<i class="fa-solid fa-snowflake"></i>', '<i class="fa-regular fa-star"></i>', '<i class="fa-regular fa-futbol"></i>', '<i class="fa-solid fa-anchor"></i>', '<i class="fa-solid fa-flask"></i>', '<i class="fa-solid fa-sun"></i>', '<i class="fa-solid fa-bug"></i>', '<i class="fa-regular fa-moon"></i>', '<i class="fa-solid fa-snowflake"></i>', '<i class="fa-regular fa-star"></i>'];
 
 let clickedBoxes = [];
