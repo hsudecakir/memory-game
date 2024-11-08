@@ -104,6 +104,7 @@ function restartGame(){
   scoreCounter = 0;
   timer = 0;
   movesCounter = 0;
+  clickedBoxes = [];
   const boxes = document.querySelectorAll('.box');
   for (const box of boxes) {
     box.classList.remove('active');
